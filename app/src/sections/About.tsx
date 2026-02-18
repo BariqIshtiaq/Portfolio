@@ -21,7 +21,7 @@ export default function About() {
         scrollTrigger: {
           trigger: section,
           start: 'top top',
-          end: '+=130%',
+          end: '+=70%',
           pin: true,
           scrub: 0.6,
         },
@@ -167,30 +167,27 @@ export default function About() {
           and reliable backend services. I work across React, TypeScript, Java, and 
           cloud-native tooling to ship features end to end.
         </p>
-      </div>
 
-      {/* Stats Row */}
-      <div
-        ref={statsRef}
-        className="absolute flex gap-12"
-        style={{
-          left: '52vw',
-          top: '70vh',
-        }}
-      >
-        <div className="flex flex-col">
-          <span className="headline-lg text-accent">2+</span>
-          <span className="micro-label text-secondary-muted mt-2">YEARS</span>
-        </div>
-        <div className="flex flex-col">
-          <span className="headline-lg text-primary-dark">10+</span>
-          <span className="micro-label text-secondary-muted mt-2">PROJECTS</span>
-        </div>
-        <div className="flex flex-col">
-          <span className="headline-lg text-primary-dark">Full</span>
-          <span className="micro-label text-secondary-muted mt-2">STACK</span>
+        {/* Stats Row (moved inside content so it flows below the paragraph) */}
+        <div
+          ref={statsRef}
+          className="mt-6 flex gap-12"
+        >
+          <div className="flex flex-col">
+            <span className="headline-lg text-accent">2+</span>
+            <span className="micro-label text-secondary-muted mt-2">YEARS</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="headline-lg text-primary-dark">10+</span>
+            <span className="micro-label text-secondary-muted mt-2">PROJECTS</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="headline-lg text-primary-dark">Full</span>
+            <span className="micro-label text-secondary-muted mt-2">STACK</span>
+          </div>
         </div>
       </div>
+      
     </section>
   );
 }

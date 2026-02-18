@@ -33,13 +33,13 @@ function App() {
         center: (st.start + ((st.end ?? st.start) - st.start) * 0.5) / maxScroll,
       }));
 
-      // Create global snap
+      // Create global snap (reduced sensitivity and quicker snaps)
       ScrollTrigger.create({
         snap: {
           snapTo: (value: number) => {
-            // Check if within any pinned range (with buffer)
+            // Check if within any pinned range (smaller buffer -> less aggressive snapping)
             const inPinned = pinnedRanges.some(
-              (r) => value >= r.start - 0.08 && value <= r.end + 0.08
+              (r) => value >= r.start - 0.02 && value <= r.end + 0.02
             );
 
             if (!inPinned) return value; // Flowing section: free scroll
@@ -55,9 +55,10 @@ function App() {
 
             return target;
           },
-          duration: { min: 0.15, max: 0.35 },
+          // make snaps faster and less noticeable
+          duration: { min: 0.08, max: 0.2 },
           delay: 0,
-          ease: 'power2.out',
+          ease: 'power1.out',
         },
       });
     }, 100);

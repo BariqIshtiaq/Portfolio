@@ -70,7 +70,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: section,
           start: 'top top',
-          end: '+=130%',
+          end: '+=70%',
           pin: true,
           scrub: 0.6,
           onLeaveBack: () => {
