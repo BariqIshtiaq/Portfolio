@@ -1,0 +1,87 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Remove default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure full viewport coverage */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Image card hover effect */
+.image-card img {
+  transition: transform 0.6s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Project item hover */
+.group:hover .group-hover\:text-accent {
+  color: #2B6BFF;
+}
+
+/* Timeline item styling */
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2B6BFF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .headline-xl {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+  
+  .headline-lg {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+  
+  .section-pinned {
+    min-height: 100vh;
+    height: auto;
+    padding: 100px 0;
+  }
+  
+  .image-card {
+    position: relative !important;
+    width: 88vw !important;
+    height: 50vh !important;
+    right: auto !important;
+    left: 6vw !important;
+    top: auto !important;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
