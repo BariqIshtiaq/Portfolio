@@ -164,7 +164,7 @@ export default function Hero() {
         }}
       >
         <img
-          src="/images/hero_portrait.jpg"
+          src="/images/hero_portrait.PNG"
           alt="Bariq Ishtiaq"
           className="w-full h-full object-cover"
         />

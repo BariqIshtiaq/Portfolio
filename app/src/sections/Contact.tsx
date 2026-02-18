@@ -95,7 +95,7 @@ export default function Contact() {
           }}
         >
           <img
-            src="/images/contact_portrait.jpg"
+            src="/images/contact_portrait.PNG"
             alt="Contact"
             className="w-full h-full object-cover"
           />
